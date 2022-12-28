@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class City(models.Model):
     name = models.CharField(max_length=100)
-    state = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
     photo_url = models.TextField()
 
     def __str__(self):
