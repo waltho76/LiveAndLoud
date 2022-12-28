@@ -7,24 +7,25 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
         many = True,
         read_only = True
     )
-    band = serializers.HyperlinkedRelatedField(
+    band_url = serializers.ModelSerializer.serializer_url_field(
         view_name ='band_detail',
         many = True,
         read_only = True
     )
     class Meta:
        model = City
-       fields = ('id', 'photo_url', 'state', 'name', 'venue', 'band')
+       fields = '__all__'
 
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
     band = serializers.HyperlinkedRelatedField(
-        view_name='city_detail',
+        view_name='CityDetail',
         many=True,
         read_only=True
     )
+    
     class Meta:
        model = Venue
-       fields = ('id', 'photo_url', 'address', 'name', 'band', 'city',)
+       fields = '__all__'
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
     Genre = serializers.HyperlinkedRelatedField(
@@ -34,7 +35,7 @@ class GenreSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = Genre
-       fields = ('id', 'photo_url', 'name', 'genre')
+       fields = '__all__'
 
 class BandSerializer(serializers.HyperlinkedModelSerializer):
     Venue = serializers.HyperlinkedRelatedField(
@@ -44,4 +45,4 @@ class BandSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = City
-       fields = ('id', 'photo_url', 'genre', 'name', 'venue',)
+       fields = '__all__'
