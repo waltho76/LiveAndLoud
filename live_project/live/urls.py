@@ -11,5 +11,5 @@ urlpatterns = [
     path('genre/', views.GenreList.as_view(), name='genre_list'),
     path('genre/<str:pk>', views.GenreDetail.as_view(), name='genre_detail'),
     path('band/', views.BandList.as_view(), name='band_list'),
-    path('band/<str:pk>', views.BandDetail.as_view(), name='band_detail')
+    path('band/<str:pk>', views.BandDetail.as_view(), name='band_detail'),
 ]

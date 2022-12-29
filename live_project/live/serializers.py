@@ -3,51 +3,44 @@ from .models import City, Venue, Genre, Band
 
 class CitySerializer(serializers.HyperlinkedModelSerializer):
     location = serializers.HyperlinkedRelatedField(
-        view_name = 'venue_detail',
-        # lookup_field = 'location',
-        many = True,
+        view_name = 'city_detail',
         read_only = True
     )
-    # band_url = serializers.ModelSerializer.serializer_url_field(
-    #     view_name ='band_detail',
-    #     many = True,
-    #     read_only = True
-    # )
+    
     class Meta:
-        
         model = City
         fields = ('id', 'location', 'name', 'photo_url',)
-        # lookup_field = 'location'
-        # extra_kwargs ={
-        #     'url': {'lookup_field': 'slug'}
-        # }
+        lookup_field = 'location'
+        
 class VenueSerializer(serializers.HyperlinkedModelSerializer):
-    band = serializers.HyperlinkedRelatedField(
-        view_name='city_detail',
-        many=True,
+    name = serializers.HyperlinkedRelatedField(
+        view_name='venue_detail',
+        # many = True,
         read_only=True
     )
     
     class Meta:
        model = Venue
-       fields = '__all__'
+       fields = ('id', 'city_id' ,'name', 'address', 'photo_url',)
+       lookup_field = 'name'
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
-    Genre = serializers.HyperlinkedRelatedField(
+    name = serializers.HyperlinkedRelatedField(
         view_name='genre_detail',
-        many=True,
         read_only=True
     )
     class Meta:
        model = Genre
-       fields = '__all__'
+       fields = ('id', 'name', 'photo_url',)
+       lookup_field = 'name'
+       
 
 class BandSerializer(serializers.HyperlinkedModelSerializer):
-    Venue = serializers.HyperlinkedRelatedField(
-        view_name='band_detail',
-        many=True,
+    venue = serializers.HyperlinkedRelatedField(
+        view_name='venue_detail',       
         read_only=True
     )
     class Meta:
        model = Band
-       fields = '__all__'
+       fields = ('id', 'name', 'photo_url', 'genre_id', 'venue_id', 'venue')
+       lookup_field = 'name'
