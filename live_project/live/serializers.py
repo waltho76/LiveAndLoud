@@ -39,5 +39,5 @@ class BandSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
        model = Band
-       fields = ('bandid', 'id', 'name', 'photo_url', 'genre_id', 'venue_id', 'venue')
+       fields = ('bandid', 'id', 'name', 'photo_url', 'genre_id', 'venue_id',)
    
