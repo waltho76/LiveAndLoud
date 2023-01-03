@@ -1,7 +1,48 @@
 import React from 'react'
+import Axios from 'axios'
+import {useState,useEffect, useContext } from 'react'
+import {useNavigate} from 'react-router-dom'
+import { DataContext } from '../DataContext';
 
 export default function Venue() {
-  return (
-    <div>Venue</div>
-  )
+    const BASE_URL='http://localhost:8000';
+    const navigate=useNavigate();
+    const [venue, setVenue] = useState([{name:"", photo_url:null}])
+    const {setCurrentVenue} = useContext(DataContext)
+    
+    useEffect(()=>{
+    const getVenues = async() => {
+        try{
+            const res = await Axios.get(`http://localhost:8000/venue/`)
+            console.log(res.data)
+            setVenue(res.data)
+        }
+        catch (error) {
+            throw error
+        }
+    }
+    getVenues();
+    },[])
+    
+    const handleClick = (venue) => {
+        setCurrentVenue(venue)
+        navigate('/venueDetails')
+    }
+
+console.log(venue)
+  return venue[1].photo_url ? (
+    <div>
+        
+        <div className="home-grid">
+            {
+                venue.map((venue, index)=>(
+                    <div style ={{backgroundImage: `url(${venue.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(venue)}>
+                        <p className='venue-name'>{venue.name}</p>
+                        <p className='venue-address'>{venue.address}</p>
+                    </div>
+                ))
+            }
+            </div>
+    </div>
+  ) : <h1>Loading</h1>;
 }
