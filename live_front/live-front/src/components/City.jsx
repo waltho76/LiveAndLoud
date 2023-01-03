@@ -1,6 +1,8 @@
 import React from 'react'
 import Axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
+import Carousel from './CarouselBootstrap';
+import CarouselBootstrap from './CarouselBootstrap';
 // import {useNavigate} from 'react-router-dom'
 // import { DataContext } from '../DataContext';
 
@@ -32,13 +34,17 @@ export default function City() {
 console.log(cities)  
   return cities[0].photo_url ? (
     <div>
+      {/* <CarouselBootstrap /> */}
       {
-                cities.map((cities, index)=>(
-                    <div style ={{backgroundImage: `url(${cities.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(cities)}>
-                        <p className='venue-name'>{cities.name}</p>
-                    </div>
-                ))
-            }
+        cities.map((cities, index)=>(
+            <div 
+            
+            style ={{backgroundImage: `url(${cities.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(cities)}>
+                <p className='venue-name'>{cities.name}</p>
+            </div>
+        ))
+      } 
+      
     </div>
   ): <h1>Loading</h1>;
 }

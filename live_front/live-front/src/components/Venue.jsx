@@ -7,15 +7,15 @@ import { DataContext } from '../DataContext';
 export default function Venue() {
     const BASE_URL='http://localhost:8000';
     const navigate=useNavigate();
-    const [venue, setVenue] = useState([{name:"", photo_url:null}])
-    const {setCurrentVenue} = useContext(DataContext)
+    const [venues, setVenues, setCurrentVenue] = useState([{name:"", photo_url:null}])
+    // const {setCurrentVenue} = useContext(DataContext)
     
     useEffect(()=>{
     const getVenues = async() => {
         try{
-            const res = await Axios.get(`http://localhost:8000/venue/`)
+            const res = await Axios.get(`${BASE_URL}/venue/`)
             console.log(res.data)
-            setVenue(res.data)
+            setVenues(res.data)
         }
         catch (error) {
             throw error
@@ -29,15 +29,16 @@ export default function Venue() {
         navigate('/venueDetails')
     }
 
-console.log(venue)
-  return venue[1].photo_url ? (
+console.log(venues)
+  return venues[0].photo_url ? (
     <div>
         
         <div className="home-grid">
             {
-                venue.map((venue, index)=>(
+                venues.map((venue, index)=>(
                     <div style ={{backgroundImage: `url(${venue.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(venue)}>
                         <p className='venue-name'>{venue.name}</p>
+                        <p className='venue-city'>{venue.city_id}</p>
                         <p className='venue-address'>{venue.address}</p>
                     </div>
                 ))
