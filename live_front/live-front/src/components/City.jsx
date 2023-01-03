@@ -40,7 +40,7 @@ console.log(cities)
             <div 
             
             style ={{backgroundImage: `url(${cities.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(cities)}>
-                <p className='venue-name'>{cities.name}</p>
+                <p className='city-name'>{cities.name}</p>
             </div>
         ))
       } 

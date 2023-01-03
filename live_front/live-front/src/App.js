@@ -13,7 +13,7 @@ function App() {
         <CarouselBootstrap />
       </div>
       <div>
-        <City />
+        {/* <City /> */}
       </div>
       <div>
         <Venue/>

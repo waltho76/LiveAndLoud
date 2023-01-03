@@ -38,10 +38,10 @@ export default function VenueDetail() {
     <div className='venue-detail-container'>
 
             <div className='venue-banner' style ={{backgroundImage: `url(${currentVenue.photo_url})`, backgroundSize: 'cover'}}>
-                <p className='venue-banner-name'>{currentVenue.name}</p>
+                <p className='venue-name'>{currentVenue.name}</p>
             </div>
 
-            <div className='venue-banner-info'>
+            <div className='venue-info'>
                 <p className='venue-location'>{currentVenue.address}</p>                
             </div>
 

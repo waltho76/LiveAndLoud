@@ -35,13 +35,13 @@ return cities[0].photo_url ? (
     <Carousel>
       <Carousel.Item>
          <img
-          className="d-block w-100 h-90"
+          className="d-block w-100 h-100"
           src="https://content.r9cdn.net/rimg/dimg/14/93/fb583943-city-11123-162bfe335ec.jpg"
           alt="first slide"
         />
                 
         <Carousel.Caption>
-          <button>ATLANTA</button>
+          <h3>ATLANTA</h3>
           
         </Carousel.Caption>
       </Carousel.Item>

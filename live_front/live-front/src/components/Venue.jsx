@@ -8,6 +8,7 @@ export default function Venue() {
     const BASE_URL='http://localhost:8000';
     const navigate=useNavigate();
     const [venues, setVenues, setCurrentVenue] = useState([{name:"", photo_url:null}])
+    
     // const {setCurrentVenue} = useContext(DataContext)
     
     useEffect(()=>{
@@ -30,18 +31,18 @@ export default function Venue() {
     }
 
 console.log(venues)
-  return venues[0].photo_url ? (
+  return  venues[0].photo_url ? (
     <div>
         
         <div className="home-grid">
             {
-                venues.map((venue, index)=>(
-                    <div style ={{backgroundImage: `url(${venue.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(venue)}>
-                        <p className='venue-name'>{venue.name}</p>
-                        <p className='venue-city'>{venue.city_id}</p>
-                        <p className='venue-address'>{venue.address}</p>
-                    </div>
-                ))
+            venues.map((venue, index)=>(
+                <div style ={{backgroundImage: `url(${venue.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(venue)}>
+                    <p className='venue-name'>{venue.name}</p>
+                    <p className='venue-city'>{venue.city}</p>
+                    <p className='venue-address'>{venue.address}</p>
+                </div>
+            ))
             }
             </div>
     </div>
