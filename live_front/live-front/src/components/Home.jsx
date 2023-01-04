@@ -1,7 +1,10 @@
 import React from 'react'
+import City from './City'
 
-export default function Home() {
+export default function Home(props) {
   return (
-    <div>Home</div>
+    <div>
+      <City/>
+    </div>
   )
 }

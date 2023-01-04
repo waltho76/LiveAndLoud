@@ -30,19 +30,16 @@ export default function CarouselBootstrap () {
 
 console.log(cities)
 return cities[0].photo_url ? (
-    <div>
-        
+    <div>        
     <Carousel>
       <Carousel.Item>
          <img
           className="d-block w-100 h-100"
           src="https://content.r9cdn.net/rimg/dimg/14/93/fb583943-city-11123-162bfe335ec.jpg"
           alt="first slide"
-        />
-                
+        />                
         <Carousel.Caption>
-          <h3>ATLANTA</h3>
-          
+          <h3>ATLANTA</h3>          
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -51,10 +48,8 @@ return cities[0].photo_url ? (
           src="https://travellersworldwide.com/wp-content/uploads/2021/05/shutterstock_313883429.jpg.webp"
           alt="Second slide"
         />
-
         <Carousel.Caption>
-          <h3>NEW ORLEANS</h3>
-          
+          <h3>NEW ORLEANS</h3>          
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -63,10 +58,8 @@ return cities[0].photo_url ? (
           src="https://img2.10bestmedia.com/Images/Photos/7804/p-beale-street-cropped_54_990x660_201404181501.jpg"
                     alt="Third slide"
         />
-
         <Carousel.Caption>
-          <h3>MEMPHIS</h3>
-          
+          <h3>MEMPHIS</h3>        
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -75,23 +68,11 @@ return cities[0].photo_url ? (
           src="https://www.beneschlaw.com/images/content/1/4/v1/14735/NewYork-1100x900.jpg"          
           alt="Third slide"
         />
-
         <Carousel.Caption>
-          <h3>NEW YORK</h3>
-          
+          <h3>NEW YORK</h3>          
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-  {
-        cities.map((city, index)=>(
-            <div 
-            
-            style ={{backgroundImage: `url(${city.photo_url})`, backgroundSize: 'cover'}} key={index} className="city-card" onClick={()=>handleClick(city)}>
-            <p className='city-name'>{city.name}</p>
-            </div>
-          ))
-        }
-
     </div>
   ): <h1>Loading</h1>;
 }

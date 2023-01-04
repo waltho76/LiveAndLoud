@@ -27,12 +27,11 @@ export default function VenueDetail() {
     },[])
 
   const handleClick = (bands) => {
-    setCurrentEvent(bands)
+    setCurrentBand(bands)
     navigate('bandDetails')
   }
   
-  const changeCounter = () =>
-  {setCounter(counter+1)}
+  
 
   return (
     <div className='venue-detail-container'>
@@ -55,12 +54,12 @@ export default function VenueDetail() {
             <div className="home-grid">
             {
                 bands.map((band, index)=>(
-                    <div style ={{backgroundImage: `url(${band.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(band)}>
+                    <div style ={{backgroundImage: `url(${band.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(bands)}>
                         <p className='venue-name'>{band.name}</p>
                     </div>
                 ))
             }</div>
-            ):<div><h1>Loading</h1><button onClick={changeCounter}>Reload</button></div>}
+            ):<div><h1>Loading</h1><button onClick={bands}>Reload</button></div>}
             
             </div>
         </div>

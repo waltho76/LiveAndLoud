@@ -3,14 +3,14 @@ import Axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
 import Carousel from './CarouselBootstrap';
 import CarouselBootstrap from './CarouselBootstrap';
-// import {useNavigate} from 'react-router-dom'
-// import { DataContext } from '../DataContext';
+import {useNavigate} from 'react-router-dom'
+import { DataContext } from '../DataContext';
 
 export default function City() {
   const BASE_URL='http://localhost:8000';
-  const [cities, setCities, setCurrentCity,] = useState([{name:"", photo_url:null}])
-  // const navigate=useNavigate();
-  // const {setCurrentCity} = useContext(DataContext)
+  const [cities, setCities] = useState([{name:"", photo_url:null}])
+  const navigate=useNavigate();
+  const {setCurrentCity} = useContext(DataContext)
 
   useEffect(()=>{
     const getCities = async() => {
@@ -28,13 +28,13 @@ export default function City() {
 
   const handleClick = (cities) => {
     setCurrentCity(cities)
-    // navigate('/cityDetails')
+    navigate('/city')
   }
 
 console.log(cities)  
   return cities[0].photo_url ? (
     <div>
-      {/* <CarouselBootstrap /> */}
+      
       {
         cities.map((cities, index)=>(
             <div 

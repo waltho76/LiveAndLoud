@@ -6,10 +6,9 @@ import { DataContext } from '../DataContext';
 
 export default function Venue() {
     const BASE_URL='http://localhost:8000';
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const [venues, setVenues, setCurrentVenue] = useState([{name:"", photo_url:null}])
     
-    // const {setCurrentVenue} = useContext(DataContext)
     
     useEffect(()=>{
     const getVenues = async() => {
