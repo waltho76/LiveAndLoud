@@ -13,8 +13,7 @@ export default function Venue() {
     useEffect(()=>{
     const getVenues = async() => {
         try{
-            const res = await Axios.get(`${BASE_URL}/venue/`)
-            console.log(res.data)
+            const res = await Axios.get(`${BASE_URL}/venue/`)            
             setVenues(res.data)
         }
         catch (error) {
@@ -29,7 +28,6 @@ export default function Venue() {
         navigate('/venueDetails')
     }
 
-console.log(venues)
   return  venues[0].photo_url ? (
     <div>
         

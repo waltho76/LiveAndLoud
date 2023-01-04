@@ -18,7 +18,6 @@ export default function Events () {
         const getBands = async() => {
             try{
                 const res = await Axios.get(`${BASE_URL}/band/`)
-                console.log(res.data)
                 setBands(res.data)
             }
             catch (error) {
@@ -33,11 +32,11 @@ export default function Events () {
         setCurrentBand(band)
         navigate('bandDetails')
     }
-console.log(bands)
+
     return bands[0].photo_url ? (
       <div className='list-of-events'>            
         <div>
-            <p className='venue-header'> EVENTS</p>
+            <p className='venue-header'> BANDS</p>
         </div>
 
         <div className="home-grid">
@@ -45,7 +44,7 @@ console.log(bands)
         bands.map((band, index)=>(            
             <div style ={{backgroundImage: `url(${band.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(band)}>
                 <p className='band-name'>{band.name}</p>
-                <p classname='band-genre'>{band.genre_id}</p>
+                <p className='band-genre'>{band.genre_id}</p>
             </div>
           ))
         }

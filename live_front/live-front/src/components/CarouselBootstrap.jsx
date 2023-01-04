@@ -12,8 +12,7 @@ export default function CarouselBootstrap () {
   useEffect(()=>{
     const getCities = async() => {
       try{
-        const res = await Axios.get(`${BASE_URL}`)
-        console.log(res.data)
+        const res = await Axios.get(`${BASE_URL}`)        
         setCities(res.data)
       }
       catch (error) {
@@ -23,12 +22,9 @@ export default function CarouselBootstrap () {
   getCities();
   },[])
 
-  const handleClick = (cities) => {
-    setCurrentCity(cities)
-    // navigate('/cityDetails')
-  }
+  
+  
 
-console.log(cities)
 return cities[0].photo_url ? (
     <div>        
     <Carousel>

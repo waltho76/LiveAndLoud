@@ -16,7 +16,7 @@ export default function City() {
     const getCities = async() => {
       try{
         const res = await Axios.get(`${BASE_URL}`)
-        console.log(res.data)
+        
         setCities(res.data)
       }
       catch (error) {
@@ -31,7 +31,7 @@ export default function City() {
     navigate('/city')
   }
 
-console.log(cities)  
+  
   return cities[0].photo_url ? (
     <div>
       
