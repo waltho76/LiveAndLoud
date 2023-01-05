@@ -31,8 +31,10 @@ class Genre(models.Model):
 class Band(models.Model):
     bandid = models.CharField(max_length=100, default='null')
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE, related_name='band')
+    venue_name = models.CharField(max_length=100, default='null')
     name = models.CharField(max_length=100, default='band name')
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE, related_name='band')
+    genre_name = models.CharField(max_length=100, default='null')
     photo_url = models.TextField()
 
     def __str__(self):
