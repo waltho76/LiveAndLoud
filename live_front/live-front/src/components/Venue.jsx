@@ -29,19 +29,33 @@ export default function Venue() {
     }
 
   return  venues[0].photo_url ? (
-    <div>
-        
-        <div className="home-grid">
-            {
-            venues.map((venue, index)=>(
-                <div style ={{backgroundImage: `url(${venue.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(venue)}>
-                    <p className='venue-name'>{venue.name}</p>
-                    <p className='venue-city'>{venue.city}</p>
-                    <p className='venue-address'>{venue.address}</p>
-                </div>
+    <div className='venue-container'>
+        <div>
+            <p className='venue-header'>VENUE</p>
+        </div>
+         <div className="container">
+            {venues.map((venue, index)=>(
+                <div className='photoaround'>
+                <div key={index} 
+                className="previewCards" 
+                onClick={()=>handleClick(venue)} 
+                style={{backgroundImage: `url(${venue.photo_url})`, 
+                backgroundSize: 'cover', 
+                color: 'rgb(146, 90, 82)',                          
+                width:'100%',
+                height:'500px',
+                
+                }}>                
+                <h1 className='venue-name'>{venue.name}</h1>
+                <p className='venue-city'>{venue.city}</p>
+                <h5 className='venue-address'>{venue.address}</h5>
+            </div>
+            </div>
             ))
             }
             </div>
     </div>
   ) : <h1>Loading</h1>;
 }
+
+     

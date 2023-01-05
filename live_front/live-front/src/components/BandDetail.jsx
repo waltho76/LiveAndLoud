@@ -1,13 +1,13 @@
 import {useState,useEffect, useContext } from 'react'
 import Axios from 'axios'
-import {useNavigate} from 'react-router-dom'
+// import {useNavigate} from 'react-router-dom'
 import { DataContext } from '../DataContext';
 import React from 'react';
 
 export default function BandDetail() {
     const {currentVenue, setCurrentBand, currentBand} = useContext(DataContext)
     const BASE_URL='http://localhost:8000';
-    const navigate=useNavigate();
+    // const navigate=useNavigate();
     const [bands, setBands] = useState([])
     // const [counter, setCounter] = useState(0)
 
@@ -24,18 +24,19 @@ export default function BandDetail() {
         }
     getBands();
     },[])
-    const handleClick = (band) => {
-        setCurrentBand(band)
-        navigate('bandDetails')
-    }
+    // const handleClick = (band) => {
+    //     setCurrentBand(band)
+    //     navigate('bandDetails')
+    // }
         
     
   return (
-    <div className='venue-detail-container'>
-            <div className='venue-banner' style ={{backgroundImage: `url(${currentBand.photo_url})`, backgroundSize: 'cover'}}>
-                <p className='venue-banner-name'>{currentBand.name}</p>
+    <div className='band-detail-container'>
+        <h2>band detail</h2>
+            <div className='band-banner' style ={{backgroundImage: `url(${currentBand.photo_url})`, backgroundSize: 'cover'}}>
+                <p className='band-name'>{currentBand.name}</p>
             </div>
-            <div className='band-info-2cards'>                
+            <div className='venue-info-2cards'>                
                 <div className='venue-info-card' style ={{backgroundImage: `url(${currentVenue.photo_url})`, backgroundSize: 'cover'}}>
                         <p className='venue-name'>{currentVenue.name}</p>
                     </div>

@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import Venue from './components/Venue'
 import City from './components/City'
+import CityDetails from './components/CityDetails'
 import CarouselBootstrap from './components/CarouselBootstrap'
 import VenueDetail from './components/VenueDetail'
 import Band from './components/Band'
@@ -21,33 +22,19 @@ function App() {
       currentVenue, setCurrentVenue,
       currentBand, setCurrentBand
     }}>
-    <div className="App">
-      <Header/>
-      <div>
-        <CarouselBootstrap />
-      </div>
-      
-      <main>
-        <Routes>
-        <Route path = '' element ={<City/>}/>
-        <Route path ='/venue' element ={<Venue/>}/>                
-        <Route path = '/band' element ={<Band/>}/>
-        {/* <Route path ='/bandDetails' element={<BandDetail/>}/> */}
-      </Routes>
-      </main>
-      {/* <div>
+      <div className="App">
+        <Header/>
+        <div>
+          <CarouselBootstrap />
+        </div>
+        <City/>
         <Venue/>
-      </div> */}
-      
-      {/* <div>
-        <BandDetail />
-      </div> */}
-      
-      {/* <div>
+        <Band/>
+        <BandDetail/>
+        <CityDetails/>
         <VenueDetail/>
-      </div> */}
-  </div>
-  </DataContext.Provider>
+      </div>
+    </DataContext.Provider>
   );
 }
 

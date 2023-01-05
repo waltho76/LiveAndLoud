@@ -33,18 +33,30 @@ export default function City() {
 
   
   return cities[0].photo_url ? (
-    <div>
-      
-      {
-        cities.map((cities, index)=>(
-            <div 
-            
-            style ={{backgroundImage: `url(${cities.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(cities)}>
-                <p className='city-name'>{cities.name}</p>
+    <div className='city-container'>
+      <div className="container">
+      {cities.map((cities, index)=>( 
+        <div className='photoaround'>     
+            <div key={index} 
+            className="previewCards" 
+            onClick={()=>handleClick(cities)} 
+            style={{backgroundImage: `url(${cities.photo_url})`, 
+            backgroundSize: 'cover', 
+            color: 'rgb(146, 90, 82)',                          
+            width:'100%',
+            height:'500px',
+          }}>           
+                
+              <h2 className='city-name'>{cities.name}</h2>
+              
+            </div>
             </div>
         ))
       } 
       
     </div>
+    
+   
+    </div> 
   ): <h1>Loading</h1>;
 }

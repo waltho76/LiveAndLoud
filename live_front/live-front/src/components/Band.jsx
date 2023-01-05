@@ -30,25 +30,35 @@ export default function Events () {
     
     const handleClick = (band) => {
         setCurrentBand(band)
-        navigate('bandDetails')
+        navigate('bandDetail')
     }
 
     return bands[0].photo_url ? (
-      <div className='list-of-events'>            
+        <div className='band-container'>            
         <div>
-            <p className='venue-header'> BANDS</p>
+            <p className='bands-header'> BANDS</p>
         </div>
 
-        <div className="home-grid">
-        {
-        bands.map((band, index)=>(            
-            <div style ={{backgroundImage: `url(${band.photo_url})`, backgroundSize: 'cover'}} key={index} className="home-venue-card" onClick={()=>handleClick(band)}>
-                <p className='band-name'>{band.name}</p>
-                <p className='band-genre'>{band.genre_id}</p>
-            </div>
-          ))
+        <div className="container">
+            {bands.map((band, index)=>(
+                <div className='photoaround'>
+            <div key={index} 
+            className="previewCards" 
+            onClick={()=>handleClick(band)} 
+            style={{backgroundImage: `url(${band.photo_url})`, 
+            backgroundSize: 'cover', 
+            color: 'rgb(146, 90, 82)',                          
+            width:'100%',
+            height:'500px',
+            }}>                
+            <h3 className='band-name'>{band.name}</h3>
+            <h5 className='band-genre-name'>{band.genre_name}</h5>
+         </div>   
+        </div>
+        ))
         }
         </div>
-      </div>
-    ):<h1>LOADING</h1>
-}
+</div>
+) : <h1>Loading</h1>;
+}       
+            

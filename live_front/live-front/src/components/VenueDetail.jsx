@@ -35,7 +35,7 @@ export default function VenueDetail() {
 
   return (
     <div className='venue-detail-container'>
-
+<h2>venue detail</h2>
             <div className='venue-banner' style ={{backgroundImage: `url(${currentVenue.photo_url})`, backgroundSize: 'cover'}}>
                 <p className='venue-name'>{currentVenue.name}</p>
             </div>
@@ -44,12 +44,9 @@ export default function VenueDetail() {
                 <p className='venue-location'>{currentVenue.address}</p>                
             </div>
 
+           
             <div>
-                <p className='venue-header'>BAND</p>
-            </div>
-
-            <div>
-            {bands.length>0?(
+            {/* {bands.length>0?(
             
             <div className="home-grid">
             {
@@ -59,7 +56,7 @@ export default function VenueDetail() {
                     </div>
                 ))
             }</div>
-            ):<div><h1>Loading</h1><button onClick={bands}>Reload</button></div>}
+            ):{}} */}
             
             </div>
         </div>
