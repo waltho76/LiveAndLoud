@@ -18,7 +18,7 @@ class VenueSerializer(serializers.HyperlinkedModelSerializer):
     )    
     class Meta:
        model = Venue
-       fields = ('venueid','id', 'city_id' ,'name', 'address', 'photo_url',)
+       fields = ('venueid','id', 'city_id' ,'name', 'address', 'photo_url', 'band_sched')
 
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):

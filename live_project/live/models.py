@@ -16,6 +16,7 @@ class Venue(models.Model):
     name = models.CharField(max_length=100, default='venue name')
     address = models.CharField(max_length=100, default='address')
     photo_url = models.TextField()
+    band_sched = models.TextField( default='null')
 
     def __str__(self):
         return self.name
