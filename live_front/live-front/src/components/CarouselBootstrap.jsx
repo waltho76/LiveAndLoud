@@ -2,10 +2,7 @@ import React from 'react'
 import Axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
 import { Carousel } from "react-bootstrap"
-import Venue from './Venue'
-import {Routes, Route} from 'react-router-dom'
 import {useNavigate} from 'react-router-dom'
-import { DataContext } from '../DataContext';
 
 export default function CarouselBootstrap () {
 
@@ -37,12 +34,13 @@ return cities[0].photo_url ? (
         <div className='carousel'>
     <Carousel>
       <Carousel.Item>
-        <a onClick={()=>handleClick(`${BASE_URL}/city/1`)}>
+        <a onClick={()=>handleClick(`${BASE_URL}/city/`)}>
          <img 
           className="d-block w-100"
           src="https://content.r9cdn.net/rimg/dimg/14/93/fb583943-city-11123-162bfe335ec.jpg"
           alt="first slide"
-        /> </a>               
+        /> 
+        </a>               
         <Carousel.Caption>
           <h3>ATLANTA</h3>          
         </Carousel.Caption>

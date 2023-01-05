@@ -7,6 +7,7 @@ import VenueDetail from './VenueDetail'
 import Band from './Band'
 import BandDetail from './BandDetail'
 import CarouselBootstrap from './CarouselBootstrap'
+import Modal from './Modal'
 
 export default function Main() {
   return (
@@ -19,6 +20,7 @@ export default function Main() {
         <Route path = '/band' element ={<Band/>}/>
         <Route path ='/bandDetails' element={<BandDetail/>}/>
         <Route path ='/carouselBootstrap' element={<CarouselBootstrap/>}/>
+        <Route path="/Modal" element={<Modal/>}/>
       </Routes>
     </div>
   )

@@ -1,45 +1,52 @@
 *{
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1px rgb(117, 115, 115);
   color: rgb(204, 60, 37);
 }
 
-.app-header h1{
-  margin: 50px 0px 50px 0px ;
-  font-size: 60px;
-}
-.carousel{
-  border-bottom: 100px black;
-  background-position: 100vh;
-}
+/* .app-header h1{
+  
+  
+} */
+/* .carousel{ */
+  /* border-bottom: 100px black; */
+  /* background-position: 100vh; */
+/* } */
  .app-header h1:hover{
   color: rgb(142, 18, 18);
+  font-size: 70px;
+  margin: 50px 0px 50px 0px ;
  }
 
 .App {
-  background-color: black;
+  background-color: rgb(48, 48, 48);
   text-align: center;
 }
 .photoaround{
   /* padding-top: 10px; */
   border: 10px solid black;
+  border-radius: 20px;
 }
-/* .previewCards{
+
+.venue-container div p,h5{
+  color: aliceblue !important;
+}
+.previewCards{
   
   padding-top: 10px;
-} */
+}
 /* h3{
   text-decoration: none;
   
 } */
 .carouselCaption{
-  background: red;
+  
   padding: 0px;
 }
-.container{
+/* .container{
   padding: 10px;
   
-}
+} */
 
 .footer{
-  border-bottom: 200px solid black;
+  border-bottom: 200px solid rgb(48, 48, 48);
 }

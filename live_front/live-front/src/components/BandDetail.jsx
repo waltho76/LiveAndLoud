@@ -8,15 +8,15 @@ export default function BandDetail() {
     const {currentVenue, setCurrentBand, currentBand} = useContext(DataContext)
     const BASE_URL='http://localhost:8000';
     // const navigate=useNavigate();
-    const [bands, setBands] = useState([])
+    const [band, setBand] = useState([])
     // const [counter, setCounter] = useState(0)
 
     useEffect(()=>{
         const getBands = async() => {
             try{
                 const res = await Axios.get(`${BASE_URL}/band/`)
-                console.log(res.data)
-                setBands(res.data)
+                console.log(res.data.band)
+                setBand(res.data.band)
             }
             catch (error) {
                 throw error

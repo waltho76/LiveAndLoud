@@ -1,17 +1,14 @@
 import React from 'react'
 import Axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
-import Carousel from './CarouselBootstrap';
-import CarouselBootstrap from './CarouselBootstrap';
 import {useNavigate} from 'react-router-dom'
-import { DataContext } from '../DataContext';
+
 
 export default function City() {
   const BASE_URL='http://localhost:8000';
   const [cities, setCities] = useState([{name:"", photo_url:null}])
   const navigate=useNavigate();
-  const {setCurrentCity} = useContext(DataContext)
-
+  
   useEffect(()=>{
     const getCities = async() => {
       try{
@@ -27,13 +24,14 @@ export default function City() {
   },[])
 
   const handleClick = (cities) => {
-    setCurrentCity(cities)
-    navigate('/city')
+    
+    navigate(`${BASE_URL}/modal/`)
   }
 
   
   return cities[0].photo_url ? (
     <div className='city-container'>
+    <h4>CITIES</h4>
       <div className="container">
       {cities.map((cities, index)=>( 
         <div className='photoaround'>     
