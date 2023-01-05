@@ -11,6 +11,7 @@ import CarouselBootstrap from './components/CarouselBootstrap'
 import VenueDetail from './components/VenueDetail'
 import Band from './components/Band'
 import BandDetail from './components/BandDetail'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -24,15 +25,17 @@ function App() {
     }}>
       <div className="App">
         <Header/>
-        <div>
-          <CarouselBootstrap />
-        </div>
-        <City/>
+        
+        {/* <div> */}
+          <Main/>
+        {/* </div> */}
+        {/* <City/>
         <Venue/>
         <Band/>
         <BandDetail/>
         <CityDetails/>
-        <VenueDetail/>
+        <VenueDetail/> */}
+        <Footer/>
       </div>
     </DataContext.Provider>
   );

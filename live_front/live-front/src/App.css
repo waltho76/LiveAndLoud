@@ -7,13 +7,16 @@
   margin: 50px 0px 50px 0px ;
   font-size: 60px;
 }
-
+.carousel{
+  border-bottom: 100px black;
+  background-position: 100vh;
+}
  .app-header h1:hover{
   color: rgb(142, 18, 18);
  }
 
 .App {
-  
+  background-color: black;
   text-align: center;
 }
 .photoaround{
@@ -37,3 +40,6 @@
   
 }
 
+.footer{
+  border-bottom: 200px solid black;
+}

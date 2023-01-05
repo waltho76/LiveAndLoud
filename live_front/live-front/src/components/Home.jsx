@@ -1,10 +1,13 @@
 import React from 'react'
-import City from './City'
+import CarouselBootstrap from './CarouselBootstrap'
+
 
 export default function Home(props) {
   return (
-    <div>
-      <City/>
+    <div className='home-container'>
+      <h4>FEATURED CITIES</h4>
+      <CarouselBootstrap />
+      
     </div>
   )
 }

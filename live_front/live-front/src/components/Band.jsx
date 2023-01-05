@@ -51,8 +51,9 @@ export default function Events () {
             width:'100%',
             height:'500px',
             }}>                
-            <h3 className='band-name'>{band.name}</h3>
+            <h3 className='band-name'>{band.name}</h3>            
             <h5 className='band-genre-name'>{band.genre_name}</h5>
+            <h4 className='band-venue'>{band.venue_name}</h4>
          </div>   
         </div>
         ))

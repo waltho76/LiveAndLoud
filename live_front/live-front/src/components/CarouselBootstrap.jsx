@@ -33,8 +33,8 @@ export default function CarouselBootstrap () {
   
 
 return cities[0].photo_url ? (
-    <div> 
-        
+    <div className='carousel-container'> 
+        <div className='carousel'>
     <Carousel>
       <Carousel.Item>
         <a onClick={()=>handleClick(`${BASE_URL}/city/1`)}>
@@ -91,6 +91,7 @@ return cities[0].photo_url ? (
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
     </div>
   ): <h1>Loading</h1>;
 }
