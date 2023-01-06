@@ -1,60 +1,54 @@
 import React from 'react'
 import Axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
-import {useNavigate} from 'react-router-dom'
-
+import { Modal } from 'react-bootstrap'
 
 export default function City() {
   const BASE_URL='http://localhost:8000';
-  const [cities, setCities] = useState([{name:"", photo_url:null}])
-  const navigate=useNavigate();
+  const [cities, setCities] = useState(null)
+  const [openModal, toggleModal] = useState(false)
+  
   
   useEffect(()=>{
-    const getCities = async() => {
-      try{
+    const getCities = async() => {      
         const res = await Axios.get(`${BASE_URL}`)
-        
-        setCities(res.data)
-      }
-      catch (error) {
-        throw error
-      }
+        console.log(res.data)
+        setCities(res.data)      
     }
+
   getCities();
   },[])
+console.log(cities)
 
-  const handleClick = (cities) => {
-    
-    navigate(`${BASE_URL}/modal/`)
-  }
-
-  
-  return cities[0].photo_url ? (
+if (!cities) {
+  return <h2> Loading Page </h2>
+} else{
+  return (
     <div className='city-container'>
     <h4>CITIES</h4>
       <div className="container">
-      {cities.map((cities, index)=>( 
-        <div className='photoaround'>     
-            <div key={index} 
-            className="previewCards" 
-            onClick={()=>handleClick(cities)} 
-            style={{backgroundImage: `url(${cities.photo_url})`, 
-            backgroundSize: 'cover', 
-            color: 'rgb(146, 90, 82)',                          
-            width:'100%',
-            height:'500px',
-          }}>           
-                
-              <h2 className='city-name'>{cities.name}</h2>
-              
+      {cities.map((city)=>( 
+
+        <div className='photoaround'>  
+               
+            <div key={city} 
+              className="previewCards"
+              onClick={toggleModal}
+              style={{backgroundImage: `url(${city.photo_url})`, 
+              backgroundSize: 'cover', 
+              color: 'rgb(146, 90, 82)',                          
+              width:'100%',
+              height:'500px'}}>                                   
+                                                
+              {openModal && <Modal city={cities} />}
+              <h2 className='city-name'>{city.name}</h2>
             </div>
-            </div>
+            
+          </div>
         ))
-      } 
-      
-    </div>
-    
-   
+      }       
+    </div>   
     </div> 
-  ): <h1>Loading</h1>;
+  )
+}
 }

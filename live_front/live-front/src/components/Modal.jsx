@@ -1,7 +1,6 @@
 import { React, useState } from "react";
 import "./Modal.css";
 
-
 export default function Modal() {
     const [venue, band] = useState([])
     const [modal, setModal] = useState(false);

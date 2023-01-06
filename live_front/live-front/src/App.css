@@ -3,14 +3,6 @@
   color: rgb(204, 60, 37);
 }
 
-/* .app-header h1{
-  
-  
-} */
-/* .carousel{ */
-  /* border-bottom: 100px black; */
-  /* background-position: 100vh; */
-/* } */
  .app-header h1:hover{
   color: rgb(142, 18, 18);
   font-size: 70px;
@@ -21,8 +13,8 @@
   background-color: rgb(48, 48, 48);
   text-align: center;
 }
-.photoaround{
-  /* padding-top: 10px; */
+
+.photoaround{ 
   border: 10px solid black;
   border-radius: 20px;
 }
@@ -30,22 +22,10 @@
 .venue-container div p,h5{
   color: aliceblue !important;
 }
-.previewCards{
-  
+
+.previewCards{  
   padding-top: 10px;
 }
-/* h3{
-  text-decoration: none;
-  
-} */
-.carouselCaption{
-  
-  padding: 0px;
-}
-/* .container{
-  padding: 10px;
-  
-} */
 
 .footer{
   border-bottom: 200px solid rgb(48, 48, 48);
