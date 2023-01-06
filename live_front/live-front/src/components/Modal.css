@@ -2,8 +2,7 @@
     margin: 60px auto;
     max-height: 100%;
     max-width: 100%;
-    border-radius: 30px;
-    
+    border-radius: 30px;    
 }
 
 .modal, .overlay {
@@ -16,8 +15,6 @@
     position: fixed;
     overflow: scroll;
 }
-
-
 
 .close-modal {
     position: absolute;

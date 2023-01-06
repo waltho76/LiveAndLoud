@@ -10,7 +10,7 @@ export default function Header () {
             <div className='logo-container'>
             <img src={Livelogo} alt='live n loud'/>
             </div> 
-                      {/* <h1>LIVE-N-LOUD</h1> */}
+                      
             <div className='nav'>
                 <Link className='nav-link' to='/'>Home</Link>
                 <Link className='nav-link' to='/city'>CITIES</Link>
