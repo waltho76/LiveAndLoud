@@ -3,17 +3,23 @@
   color: rgb(204, 60, 37);
 }
 
+.App {
+  background-color: rgb(48, 48, 48);
+  text-align: center;
+}
+
+
  .app-header h1:hover{
   color: rgb(142, 18, 18);
   font-size: 70px;
   margin: 50px 0px 50px 0px ;
  }
 
-.App {
-  background-color: rgb(48, 48, 48);
-  text-align: center;
-}
-
+ .logo-container{
+  
+  padding-top: 20px;
+ }
+ 
 .photoaround{ 
   border: 10px solid black;
   border-radius: 20px;
