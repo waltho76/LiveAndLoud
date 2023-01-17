@@ -20,7 +20,7 @@ export default function Main() {
         <Route path = '/band' element ={<Band/>}/>
         <Route path ='/bandDetails' element={<BandDetail/>}/>
         <Route path ='/carouselBootstrap' element={<CarouselBootstrap/>}/>
-        <Route path="/Modal" element={<Modal/>}/>
+        <Route path="/modal" element={<Modal/>}/>
       </Routes>
     </div>
   )

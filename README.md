@@ -1,4 +1,5 @@
 # Live N Loud
+<img src={Livelogo} alt='live n loud'/>
 A Full-Stack travel app built with django, python, and react.
 
 ## Overview  <a name="overview"></a>
